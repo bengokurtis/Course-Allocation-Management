@@ -141,7 +141,6 @@
       }
 
 .section-1 .column {
-    flex: 50%;
     width: 350px;
     padding: 0 4px;
     flex-direction: column;
