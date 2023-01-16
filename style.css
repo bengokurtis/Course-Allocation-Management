@@ -87,13 +87,13 @@
 }
 
 .user-p img{
-    width: 100px;
+    width: 150px;
     border-radius: 50%;
 }
 
 .user-p h4{
     color: #ccc;
-    padding: 5px o;
+    padding: 5px 0;
 
 }
 
@@ -146,6 +146,20 @@
     flex-direction: column;
     
   }
+
+  .section-1 .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    max-height: 100px;
+    margin: auto;
+    text-align: center;
+  }
+  
+ .section-1 .card .title {
+    color: grey;
+    font-size: 18px;
+  }
+
   .section-1 .column ul li{
     list-style: none;
     display: flex;
@@ -173,7 +187,20 @@
     font-size: 30px;
   }
 
+  .section-1 .container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.section-1 .container form{
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .side-bar ul{
     margin-top: 30px;
@@ -188,7 +215,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: 500ms background;
+    transition: 500ms;
 }
 
 .side-bar ul li:hover{
