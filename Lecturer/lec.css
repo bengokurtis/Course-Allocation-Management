@@ -1,0 +1,59 @@
+  *{
+    box-sizing: border-box;
+}
+
+#myInput {
+    background-image: url('../Icons/search.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 800px; 
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-top: 50px;
+    margin-left: 350px;
+
+  }
+
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.container table {
+    background-color: #fff;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+ th, td {
+    text-align: left;
+    padding: 20px;
+    text-decoration: none;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+
+h1{
+    padding: 5px;
+    text-align: center;
+    size: 20px;
+    padding-top: 30px;
+    justify-content: center;
+}
+
+
+form button{
+    width: 120px;
+    margin-top: 20px;
+}
