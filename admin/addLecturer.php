@@ -32,7 +32,6 @@ include "./main/header.php";
         </select><br>
        
             <button class="btn btn-primary" name='submit' type='submit'>Add Lecturer</button>
-            <button class="btn btn-primary" style="float: right;">View</button>
         </form>
     </div>
 </body>
