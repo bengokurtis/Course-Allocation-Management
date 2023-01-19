@@ -1,15 +1,6 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="icon" href="IMG/MindHub logo.png" type="image/icon type">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>MindHub</title>
-</head>
+<?php
+include "./main/header.php";
+?>
 
 <body>
     <!--<input type="checkbox"  id="checkbox">-->
@@ -34,71 +25,9 @@
 
     </header>
     <div class="body">
-        <nav class="side-bar">
-            <div class="user-p">
-                <img src="../IMG/kurtis.jpg" alt="Display Picture">
-                <h4>Kurtis</h4>
-
-                <ul>
-                    <li>
-                        <a href="addLecturer.php">
-                            <i class="fa fa-users" aria-hidden="true"></i>
-                            <span>Lecturers List</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                            <span>Units List</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-address-book" aria-hidden="true"></i>
-                            <span>Allocations</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="addDepartment.php">
-                            <i class="fa fa-university" aria-hidden="true"></i>
-                            <span>Departments</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                            <span>Statistics</span>
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-bullhorn" aria-hidden="true"></i>
-                            <span>Announcements</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span>About</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-power-off" aria-hidden="true"></i>
-                            <span>Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <!--Side bar-->
+        <?php include "./main/side-bar.php";?>
+        <!--end of side bar-->
         <section class="section-1">
             <h1>Welcome</h1>
             <p>#Course Allocation System</p>
@@ -106,7 +35,7 @@
                 <div class="column">
                     <ul>
                         <li style="background: #38AEBF;">
-                            <a href="Main/AssignUnit.html">
+                            <a href="AssignUnit.php">
                                 <i class="fa fa-book" aria-hidden="true"></i>
                                 <span> Assign Units</span>
                             </a>

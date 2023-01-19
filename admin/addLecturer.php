@@ -1,5 +1,5 @@
 <?php
-include "../main/header.php";
+include "./main/header.php";
 ?>
 <body>
     <header class="header">

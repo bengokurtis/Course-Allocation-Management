@@ -120,7 +120,7 @@ body {
 
 .section-1 {
     width: 100%;
-    background: url("./IMG/TUK-Back.jpg");
+    background: url("../IMG/TUK-Back.jpg");
     background-size: cover;
     background-position: center;
     display: flex;

@@ -1,6 +1,6 @@
 <?php
 
-include "../main/header.php";
+include "./main/header.php";
 ?>
 <body>
     <!--<input type="checkbox"  id="checkbox">-->
