@@ -3,18 +3,19 @@ include "../db/db-connect.php";
 ?>
 <?php
 if(isset($_POST['submit'])){
-  echo $fullname = $_POST['fullname'];
-  echo $username = $_POST['username'];
-  echo $password = md5($_POST['password']);
+   $fullname = $_POST['fullname'];
+   $username = $_POST['username'];
+   $password = md5($_POST['password']);
 
-  $sql = "INSERT into tbl_admin(full_name,username,password) VALUES('$fullname','$username','$password')";
+  $sql = "INSERT into tbl_admin(full_name,user_name,password) VALUES('$fullname','$username','$password')";
   $res = mysqli_query($conn,$sql);
    
   if($res){
     $_SESSION['add'] = "Admin added successfully";
     header("location:".SITEURL.'admin/index.php');
   } else {
-
+    $_SESSION['add'] = "Failed to add admin";
+    header("location:".SITEURL.'admin/regiter.php');
   }
 }
 

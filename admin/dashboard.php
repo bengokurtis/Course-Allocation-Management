@@ -31,6 +31,12 @@ include "./main/header.php";
         <section class="section-1">
             <h1>Welcome</h1>
             <p>#Course Allocation System</p>
+            <?php
+        if(isset($_SESSION["login"])){
+            echo $_SESSION['login'];
+            unset($_SESSION["login"]);
+        }
+        ?>
             <div class="row">
                 <div class="column">
                     <ul>

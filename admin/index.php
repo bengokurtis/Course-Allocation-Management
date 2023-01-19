@@ -1,3 +1,6 @@
+<?php
+include "../db/db-connect.php";
+?>
 <html lang="en">
 
     <head>
@@ -20,25 +23,31 @@
           <img class="img-logo" src="../IMG/MindHub-logo.png" alt="logo">
           <span class="h1 fw-bold mb-0">Mind Hub</span>
         </div>
-
+        <?php
+        if(isset($_SESSION["login"])){
+            echo $_SESSION['login'];
+            unset($_SESSION["login"]);
+        }
+        
+        ?>
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-          <form style="width: 23rem;">
+          <form style="width: 23rem;" method="post" action="#">
 
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
 
             <div class="form-outline mb-4">
-              <input type="email" id="form2Example18" class="form-control form-control-lg" />
-              <label class="form-label" for="form2Example18">Email address</label>
+              <input type="text" id="form2Example18" class="form-control form-control-lg" / name="username">
+              <label class="form-label" for="form2Example18">Username</label>
             </div>
 
             <div class="form-outline mb-4">
-              <input type="password" id="form2Example28" class="form-control form-control-lg" />
+              <input type="password" id="form2Example28" class="form-control form-control-lg"  name="password"/>
               <label class="form-label" for="form2Example28">Password</label>
             </div>
 
             <div class="pt-1 mb-4">
-              <button class="btn btn-info btn-lg btn-block" type="button">Login</button>
+              <button class="btn btn-info btn-lg btn-block" type="submit" name="submit">Login</button>
             </div>
 
             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
@@ -58,3 +67,22 @@
 </section>
 </body>
 </html>
+<?php
+if(isset($_POST['submit'])){
+  $username = $_POST['username'];
+  $password = md5($_POST['password']);
+
+  $sql ="SELECT * FROM tbl_admin WHERE user_name='$username' AND password='$password'";
+  $result = mysqli_query($conn,$sql);
+  $count = mysqli_num_rows($result);
+ 
+  if($count === 1){
+    $_SESSION['login'] = "Login Successful!!!";
+    $_SESSION['user'] = $username;
+    header('location:'.SITEURL.'admin/dashboard.php');
+  } else {
+    $_SESSION['login'] = "Password or Username did not match ";
+    header('location:'.SITEURL.'admin/index.php');
+  }
+}
+?>

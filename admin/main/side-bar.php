@@ -1,7 +1,14 @@
 <nav class="side-bar">
             <div class="user-p">
                 <img src="../IMG/kurtis.jpg" alt="Display Picture">
-                <h4>Kurtis</h4>
+                <h4>
+                <?php
+        if(isset($_SESSION["user"])){
+            echo $_SESSION['user'];
+            unset($_SESSION["user"]);
+        }
+        ?>
+                </h4>
 
                 <ul>
                     <li>
@@ -55,7 +62,7 @@
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="logout.php">
                             <i class="fa fa-power-off" aria-hidden="true"></i>
                             <span>Logout</span>
                         </a>
