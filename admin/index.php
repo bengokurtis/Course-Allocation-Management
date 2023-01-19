@@ -42,7 +42,7 @@ include "./main/header.php";
                         </li>
 
                         <li style="background: #4FBF38;">
-                            <a href="#">
+                            <a href="addDepartment.php">
                                 <i class="fa fa-university" aria-hidden="true"></i>
                                 <span>Departments</span>
                             </a>
@@ -67,7 +67,7 @@ include "./main/header.php";
                             </a>
                         </li>
                         <li style="background: #3884BF;">
-                            <a href="Main/addLecturer.html">
+                            <a href="addLecturer.php">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span>Lecturers</span>
                             </a>
