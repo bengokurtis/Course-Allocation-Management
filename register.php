@@ -25,7 +25,7 @@
 
           <form style="width: 23rem;">
 
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Register!</h3>
 
             <div class="form-outline mb-4">
               <input type="email" id="form2Example18" class="form-control form-control-lg" />
@@ -42,7 +42,7 @@
             </div>
 
             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-            <p>Don't have an account? <a href="register.php" class="link-info">Register here</a></p>
+            <p>Already have an account? <a href="index.php" class="link-info">Login here</a></p>
 
           </form>
 
