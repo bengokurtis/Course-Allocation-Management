@@ -1,7 +1,14 @@
 <?php 
 include "./main/header.php";
 ?>
+<?php
+if(isset($_POST['submit'])){
+    echo "HELL YEAH";
+}
 
+
+
+?>
 <body>
     <header class="header">
         <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
@@ -27,12 +34,12 @@ include "./main/header.php";
                     <label for="course-name">Course Name</label><br>
                     <select name="course-name" id="course-name">
                         <option value="year">--Select Course Name--</option>
-                        <option value="1">B.Tech Information Technology</option>
-                        <option value="2">B.Tech Computer Technology</option>
-                        <option value="3">B.Tech Computer Networks</option>
-                        <option value="1">Dip.Tech Information Technology</option>
-                        <option value="2">Dip.Tech Computer Technology</option>
-                        <option value="3">Dip.Tech Computer Networks</option>
+                        <option value="B.Tech Information Technology">B.Tech Information Technology</option>
+                        <option value="B.Tech Computer Technology">B.Tech Computer Technology</option>
+                        <option value="B.Tech Computer Networks">B.Tech Computer Networks</option>
+                        <option value="Dip.Tech Information Technology">Dip.Tech Information Technology</option>
+                        <option value="Dip.Tech Computer Technology">Dip.Tech Computer Technology</option>
+                        <option value="Dip.Tech Computer Networks">Dip.Tech Computer Networks</option>
                     </select><br>
 
                     <label for="unit-code">Unit Code</label><br>
