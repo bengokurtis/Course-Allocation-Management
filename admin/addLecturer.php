@@ -1,6 +1,14 @@
 <?php
 include "./main/header.php";
 ?>
+<?php
+
+if(isset($_POST['submit'])){
+    echo "tupo site";
+}
+
+?>
+
 <body>
     <header class="header">
         <h2 class="u-name">Mind <b>Hub</b></h2>

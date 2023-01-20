@@ -32,11 +32,16 @@ include "./main/header.php";
             <h1>Welcome</h1>
             <p>#Course Allocation System</p>
             <?php
-        if(isset($_SESSION["login"])){
-            echo $_SESSION['login'];
-            unset($_SESSION["login"]);
-        }
-        ?>
+            if(isset($_SESSION['login'])){
+                ?>
+            <div class="alert alert-success alert-dismissible fade show">
+                <strong>Welcome!</strong> <?php echo $_SESSION['login']; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+           </div>
+           <?php
+           unset($_SESSION['login']);
+            }
+           ?>
             <div class="row">
                 <div class="column">
                     <ul>

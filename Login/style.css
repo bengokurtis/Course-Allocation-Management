@@ -13,3 +13,8 @@
 .px-5 {
     margin-top: 10px;
 }
+
+.alert {
+    margin-inline: 100px;
+    margin-block-start: 20px;
+}

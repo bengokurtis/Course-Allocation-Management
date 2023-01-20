@@ -2,12 +2,9 @@
             <div class="user-p">
                 <img src="../IMG/kurtis.jpg" alt="Display Picture">
                 <h4>
-                <?php
-        if(isset($_SESSION["user"])){
-            echo $_SESSION['user'];
-            unset($_SESSION["user"]);
-        }
-        ?>
+                    <?php
+                    echo $_SESSION['user'];
+                    ?>
                 </h4>
 
                 <ul>
