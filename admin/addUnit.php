@@ -4,8 +4,19 @@ include "./main/header.php";
 
 <body>
     <header class="header">
-        <h2 class="u-name">Mind <b>Hub</b></h2>
+        <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
     </header>
+    <?php
+            if(isset($_SESSION['status'])){
+                ?>
+            <div class="alert alert-success alert-dismissible fade show">
+                <strong>Welcome!</strong> <?php echo $_SESSION['status']; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+           </div>
+           <?php
+           unset($_SESSION['status']);
+            }
+           ?>
     <div class="body">
     
             <div class="container"> 
