@@ -10,8 +10,9 @@ if(isset($_POST['submit'])){
     $lecturercontact = $_POST['lec-contact'];
     $lecturerdesignation =$_POST['designation'];
     $lecturerdepartment = $_POST['dept-name'];
+    $lecturerRegNo = "TUK/".rand(000,999)."/".rand(000,999);
 
-    $sql = "INSERT INTO lecturers(department_id,lecturer_name,address,email,contact_no,designation) VALUES('$lecturerdepartment','$lecturername','$lectureraddress','$lectureremail','$lecturercontact','$lecturerdesignation')";
+    $sql = "INSERT INTO lecturers(department_id,lecturer_name,address,email,contact_no,designation,lec_reg_no) VALUES('$lecturerdepartment','$lecturername','$lectureraddress','$lectureremail','$lecturercontact','$lecturerdesignation','$lecturerRegNo')";
     $result = mysqli_query($conn,$sql);
     if($result){
        $_SESSION['status'] = "Lecturer added successfully!!";

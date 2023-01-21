@@ -3,7 +3,19 @@ include "./main/header.php";
 ?>
 <?php
 if(isset($_POST['submit'])){
-    echo "HELL YEAH";
+    $course_name = $_POST['course-name'];
+    $unit_code = $_POST['unit-code'];
+    $unit_name = $_POST['unit-name'];
+    $unit_description = $_POST['unit-description'];
+    $year = $_POST['year'];
+    $term = $_POST['term'];
+    $credit_hours = $_POST['credit-hours']; 
+
+    $sql = "INSERT INTO units(course_id,unit_code,unit_name,unit_description,year,term,credit_hours) VALUES('$course_name','$unit_code','$unit_name','$unit_description','$year','$term','$credit_hours')";
+    $result = mysqli_query($conn,$sql);
+    if($result){
+       $_SESSION['status'] = "Unit added successfully!!";
+    }
 }
 
 
@@ -30,22 +42,22 @@ if(isset($_POST['submit'])){
                 <form method="post" action="#">
 
                     <h1>Add Unit</h1>
-
+                    <?php
+                    $sql = "SELECT * FROM courses";
+                    $result = mysqli_query($conn, $sql);
+                    ?>
                     <label for="course-name">Course Name</label><br>
                     <select name="course-name" id="course-name">
                         <option value="year">--Select Course Name--</option>
-                        <option value="B.Tech Information Technology">B.Tech Information Technology</option>
-                        <option value="B.Tech Computer Technology">B.Tech Computer Technology</option>
-                        <option value="B.Tech Computer Networks">B.Tech Computer Networks</option>
-                        <option value="Dip.Tech Information Technology">Dip.Tech Information Technology</option>
-                        <option value="Dip.Tech Computer Technology">Dip.Tech Computer Technology</option>
-                        <option value="Dip.Tech Computer Networks">Dip.Tech Computer Networks</option>
+                        <?php while($row= mysqli_fetch_assoc($result)):;?>
+                        <option value="<?php echo $row['id'];?>"><?php echo $row['course_name'];?></option>
+                        <?php endwhile;?>
                     </select><br>
 
                     <label for="unit-code">Unit Code</label><br>
                     <input type="text" name="unit-code" id="unit-code" placeholder="Type the unit code"><br>
                    
-                    <label for="course-name">Unit Name</label><br>
+                    <label for="unit-name">Unit Name</label><br>
                     <input type="text" name="unit-name" id="unit-name" placeholder="Type the unit name"><br>
                     
                     <label for="course-description">Unit Description</label><br>
