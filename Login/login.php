@@ -12,7 +12,7 @@ include "./admin/main/header.php";
         <img src="../IMG/MindHub tagline.png" alt="MindHub Tagline">
     </div>
 
-    <div class="container">
+    <div class="container1">
         <form action="" method="post">
 
           <h1>Login</h1>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/lec.css">
-    <link rel="stylesheet" href="/Students/student.css">
+    <link rel="stylesheet" href="../Students/student.css">
     <link rel="stylesheet" href="../Login/style.css">
     <title>MindHub</title>
 </head>

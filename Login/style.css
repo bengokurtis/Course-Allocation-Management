@@ -15,7 +15,7 @@
     margin-top: 250px;
     margin-left: 60px;
 }
-.container{
+.container1 {
 
     align-items: center;
     justify-content: center;
@@ -27,7 +27,7 @@
     padding-left: 100px;
 }
 
-body .container form{
+body .container1 form{
     font-family: Arial, Helvetica, sans-serif;
     width: 500px;
     padding: 20px;
@@ -35,38 +35,38 @@ body .container form{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.container .form-select{
+.container1 .form-select{
     color: black;
     padding: 8px;
     margin-bottom: 10px;
 }
 
-.container select{
+.container1 select{
     width: 100%;
     padding: 10px;
     border-radius: 8px;
 
 }
 
-.container .form-text{
+.container1 .form-text{
     color: #FD4D0C;
 }
 
-.container form a{
+.container1 form a{
     text-decoration: none;
     color: dodgerblue;
 }
 
 
 
-.container .signin-card form{
+.container1 .signin-card form{
     width: 400px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.container .signin-card input{
+.container1 .signin-card input{
     padding: 8px;
     margin: 10px 0;
     width: 350px;

@@ -12,7 +12,7 @@ include "./admin/main/header.php";
                 <img src="../IMG/MindHub tagline.png" alt="MindHub Tagline">
             </div>
 
-            <div class="container">
+            <div class="container1">
             <div id="rsi-card" class="signin-card">  
                 <form novalidate method="post" action="checklogin.php?action=login">
                     <h3>Enter your Staff Access Key</h3>
