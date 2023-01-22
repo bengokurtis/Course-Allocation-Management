@@ -30,21 +30,12 @@ include "./main/header.php";
         <select name="dept-name">
         <option value="school">School</option>
         </select><br>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:Main/addLecturer.html
 
         <div>            
             <button class="btn btn-primary" name='submit' type='submit'>Assign</button>
             <a href="lecturerList.html" style="float: right; color: dodgerblue; text-decoration: none; margin-top: 20px;">View</a>
         </div>
 
-=======
->>>>>>> 8c4508724c08de23c34036c6c740db2ee5a9a79d
-       
-            <button class="btn btn-primary" name='submit' type='submit'>Add Lecturer</button>
-            <button class="btn btn-primary" style="float: right;">View</button>
->>>>>>> 67ad26c2b9371006481df95b3d9a25bf535f806c:admin/addLecturer.php
         </form>
     </div>
 </body>
