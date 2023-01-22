@@ -10,7 +10,7 @@ include "../db/db-connect.php";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-    <link rel="icon" href="IMG/MindHub logo.png" type="image/icon type">
+    <link rel="icon" href="../IMG/MindHub-logo.png" type="image/icon type">
     <link rel="stylesheet" href="../Login/style.css">
     <title>MindHub</title>
     </head>
@@ -57,12 +57,7 @@ include "../db/db-connect.php";
 
             <div class="form-outline mb-4">
               <input type="text" id="form2Example18" class="form-control form-control-lg" / name="username">
-              <label class="form-label" for="form2Example18">Username</label>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="password" id="form2Example28" class="form-control form-control-lg"  name="password"/>
-              <label class="form-label" for="form2Example28">Password</label>
+              <label class="form-label" for="form2Example18">Enter Lecturer id</label>
             </div>
 
             <div class="pt-1 mb-4">
@@ -89,19 +84,19 @@ include "../db/db-connect.php";
 <?php
 if(isset($_POST['submit'])){
    $username = $_POST['username'];
-   $password = md5($_POST['password']);
+  
 
-  $sql ="SELECT * FROM tbl_admin WHERE user_name='$username' AND password='$password'";
+  $sql ="SELECT * FROM lecturer_login WHERE lec_login_id='$username'";
   $result = mysqli_query($conn,$sql);
   $count = mysqli_num_rows($result);
   
 if($count === 1){
   $_SESSION['login'] = "Login Successful!!!";
   $_SESSION['user'] = $username;
-  header('location:'.SITEURL.'admin/dashboard.php');
+  header('location:'.SITEURL.'Lecturer/dashboard.php');
 } else {
   $_SESSION['login-error'] = "Password or Username do not match!!! ";
-  header('location:'.SITEURL.'admin/index.php');
+  header('location:'.SITEURL.'Lecturer/index.php');
 }
 }
 ?>

@@ -1,52 +1,34 @@
 <nav class="side-bar">
             <div class="user-p">
                 <img src="../IMG/kurtis.jpg" alt="Display Picture">
-                <h4>
-                    <?php
-                    echo $_SESSION['user'];
-                    ?>
-                </h4>
+                <h4>Hello, user</h4>
 
                 <ul>
                     <li>
-                        <a href="addLecturer.php">
-                            <i class="fa fa-users" aria-hidden="true"></i>
-                            <span>Lecturers List</span>
+                        <a href="#">
+                            <i class="fa fa-tachometer" aria-hidden="true"></i>
+                            <span>Dashboard</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="addUnit.php">
+                        <a href="#">
                             <i class="fa fa-book" aria-hidden="true"></i>
-                            <span>Units List</span>
+                            <span>Courses</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="#">
-                            <i class="fa fa-address-book" aria-hidden="true"></i>
-                            <span>Allocations</span>
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                            <span>Department</span>
                         </a>
                     </li>
 
-                    <li>
-                        <a href="addDepartment.php">
-                            <i class="fa fa-university" aria-hidden="true"></i>
-                            <span>Departments</span>
-                        </a>
-                    </li>
-
+                    
                     <li>
                         <a href="#">
-                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                            <span>Statistics</span>
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
                             <span>Announcements</span>
                         </a>
                     </li>

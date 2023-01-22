@@ -36,7 +36,6 @@ include "./main/header.php";
             <input type="number" name="course-credit" id="course-credit"><br>
 
             <button class="btn btn-primary" name='submit' type='submit'>Add Lecturer</button>
-            <button class="btn btn-success" style="float: right;">Update</button>
         </form>
     </div>
 </body>
