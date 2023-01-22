@@ -1,6 +1,8 @@
+<html lang="en">
 <?php
 include "./main/header.php";
 ?>
+
 <body>
     <header class="header">
         <h2 class="u-name">Mind <b>Hub</b></h2>
@@ -33,7 +35,7 @@ include "./main/header.php";
 
         <div>            
             <button class="btn btn-primary" name='submit' type='submit'>Assign</button>
-            <a href="lecturerList.html" style="float: right; color: dodgerblue; text-decoration: none; margin-top: 20px;">View</a>
+            <a href="./allocations.php" style="float: right; color: dodgerblue; text-decoration: none; margin-top: 20px;">View</a>
         </div>
 
         </form>

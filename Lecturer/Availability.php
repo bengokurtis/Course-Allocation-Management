@@ -1,16 +1,6 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="icon" href="/IMG/MindHub logo.png" type="image/icon type">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../Lecturer/lec.css">
-    <title>MindHub | Units List</title>
-</head>
-
+<?php
+include "./admin/main/header.php";
+?>
 <script>
     function myFunction() {
       // Declare variables
@@ -54,9 +44,10 @@
                     <th scope="col">Unit Name</th>
                     <th scope="col">Unit code</th>
                     <th scope="col">Course Name</th>
-                    <th scope="col">Year taught</th>
-                    <th scope="col">Term</th>
-                    <th scope="col">Credit Hours</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Mark Availability</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -64,14 +55,24 @@
                     <th scope="row">1</th>
                     <td>Advanced Visual Programming</td>
                     <td>ECII/3208</td>
-                    <td>B.Tech Information Technology</td>
-                    <td>3</td>
-                    <td>2</td>
-                    <td>48</td>
-                    <td><a href="updateUnits.html" class="btn btn-success">Update</a></td>
+                    <td>xxxxxxxxx</td>
+                    <td>42Hrs</td>
+                    <td>3.2</td>
+                    <td>
+                        <input type="checkbox" id="availability" name="availability" value="Available">
+                    </td>
+                    <td><a href="#" class="btn btn-success">Book</a></td>
                 </tr>
                 </tbody>
             </table>
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+

@@ -1,14 +1,8 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="icon" href="../IMG/MindHub logo.png" type="image/icon type">
-    <link rel="stylesheet" href="../style.css">
-    <title>MindHub | Student</title>
-</head>
+<?php
+include "./admin/main/header.php";
+?>
+
 <body>
     <!--<input type="checkbox"  id="checkbox">-->
     <header class="header">
@@ -74,7 +68,7 @@
                 <div class="column">
                     <ul>
                         <li style="background: #BF3838;">
-                            <a href="Students/BookUnits.html">
+                            <a href="./BookUnits.php">
                                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                             <span>Book Units</span>
                             </a>

@@ -1,4 +1,6 @@
-<html lang="en">
+<?php
+include "./admin/main/header.php";
+?>
 
 <body>
       <header class="header">

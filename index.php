@@ -1,6 +1,6 @@
 <html lang="en">
 <?php
-include "./main/header.php";
+include "./admin/main/header.php";
 ?>
 
 <body>
@@ -26,9 +26,9 @@ include "./main/header.php";
 
     </header>
     <div class="body">
-        <!--Side bar-->
-        <?php include "./main/side-bar.php";?>
-        <!--end of side bar-->
+            <!--Side bar-->
+            <?php include "./admin/main/side-bar.php";?>
+            <!--end of side bar-->
         <section class="section-1">
             <h1>Welcome</h1>
             <p>#Course Allocation System</p>
@@ -36,14 +36,15 @@ include "./main/header.php";
                 <div class="column">
                     <ul>
                         <li style="background: #38AEBF;">
-                            <a href="AssignUnit.php">
+                            <a href="./admin/AssignUnit.php">
                                 <i class="fa fa-book" aria-hidden="true"></i>
                                 <span> Assign Units</span>
                             </a>
                         </li>
+                        
 
                         <li style="background: #4FBF38;">
-                            <a href="#">
+                            <a href="./admin/addDepartment.php">
                                 <i class="fa fa-university" aria-hidden="true"></i>
                                 <span>Departments</span>
                             </a>
@@ -60,7 +61,7 @@ include "./main/header.php";
                             </a>
                         </li>
                         <li style="background: #3884BF;">
-                            <a href="./addLecturer.php">
+                            <a href="./admin/addLecturer.php">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span>Lecturers</span>
                             </a>

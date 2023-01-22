@@ -1,14 +1,7 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">    <link rel="icon" href="/IMG/MindHub logo.png" type="image/icon type">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="main.css">
-    <title>MindHub | Update Units</title>
-</head>
+<?php
+include "./main/header.php";
+?>
 
 <body>
     <header class="header">
@@ -17,9 +10,9 @@
     
     <div class="container"> 
         <form method="post" action="#">
-            <h1>Update Unit</h1>
+            <h1>Add Unit</h1>
             <label for="course-name">Course Name: </label><br>    
-            <div class=selection>           
+            <div class="selection">           
                 <!--<select  name="course-name" id="course" multiple>
                     <option value="B.Tech Information Technology">B.Tech Information Technology</option>
                     <option value="B.Tech Computer Technology">B.Tech Computer Technology</option>
@@ -30,25 +23,25 @@
                 </select>-->
 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" value="B.Tech Information Technology" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">B.Tech Information Technology</label><br>
                 
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <input class="form-check-input" type="checkbox" value="B.Tech Computer Technology" id="flexCheckChecked">
                     <label class="form-check-label" for="flexCheckChecked">B.Tech Computer Technology</label><br>
 
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" value="B.Tech Computer Networks" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">B.Tech Computer Networks</label>
                 </div>
 
 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <input class="form-check-input" type="checkbox" value="Dip.Tech Information Technology" id="flexCheckChecked">
                     <label class="form-check-label" for="flexCheckChecked">Dip.Tech Information Technology</label><br>
                 
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" value="Dip.Tech Computer Technology" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">Dip.Tech Computer Technology</label><br>
                 
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <input class="form-check-input" type="checkbox" value="Dip.Tech Computer Networks" id="flexCheckChecked">
                     <label class="form-check-label" for="flexCheckChecked">Dip.Tech Computer Networks</label><br>
                 </div>
 
@@ -83,11 +76,19 @@
                 <input type="text" name="credit-hours" id="credit-hours" placeholder="Type the Credit Hours)" required><br>
             
             <div>            
-                <button class="btn btn-success" name='submit' type='submit'>Update</button>
-                <a href="unitsList.html" style="float: right; color: dodgerblue; text-decoration: none; margin-top: 20px;">View</a>
+                <button class="btn btn-primary" name='submit' type='submit'>Add Unit</button>
+                <a href="./unitsList.php" style="float: right; color: dodgerblue; text-decoration: none; margin-top: 20px;">View</a>
             </div>
 
         </form>
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+

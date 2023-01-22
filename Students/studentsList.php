@@ -1,15 +1,6 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="icon" href="/IMG/MindHub logo.png" type="image/icon type">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="main.css">
-    <title>MindHub | Availability</title>
-</head>
+<?php
+include "./admin/main/header.php";
+?>
 
 <script>
     function myFunction() {
@@ -51,20 +42,19 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Unit Name</th>
-                    <th scope="col">Unit code</th>
-                    <th scope="col">Department Name</th>
-                    <th scope="col">Lecturer</th>
+                    <th scope="col">Student name</th>
+                    <th scope="col">Registration Number</th>
+                    <th scope="col">Course of Study</th>
+                    <th scope="col">Year of Study</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Advanced Visual Programming</td>
-                    <td>ECII/3208</td>
-                    <td>Computer Science</td>
                     <td>Felix Okoth</td>
-                    <td><a href="updateAssignments.html" class="btn btn-success">Update</a></td>
+                    <td>00100 Nairobi</td>
+                    <td>okoth@gmail.com</td>
+                    <td>0757960890</td>
                 </tr>
                 </tbody>
             </table>
