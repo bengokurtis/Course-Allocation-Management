@@ -91,8 +91,10 @@ if(isset($_POST['submit'])){
   $count = mysqli_num_rows($result);
   
 if($count === 1){
+  $row = mysqli_fetch_assoc($result);
+  $lecname = $row['lecturer_name'];
   $_SESSION['login'] = "Login Successful!!!";
-  $_SESSION['user'] = $username;
+  $_SESSION['user'] = $lecname;
   header('location:'.SITEURL.'Lecturer/dashboard.php');
 } else {
   $_SESSION['login-error'] = "Password or Username do not match!!! ";

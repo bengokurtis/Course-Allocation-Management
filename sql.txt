@@ -1,0 +1,6 @@
+INSERT INTO available_lecturers (unit_name,unit_code,course_name,duration,year,lecturer_id) SELECT units.unit_name, units.unit_code,courses.course_name,units.credit_hours,units.year,lecturer_login.id FROM units INNER JOIN courses on courses.id = units.id INNER JOIN lecturer_login on lecturer_login.id=courses.id WHERE units.id =1
+SELECT available_lecturers.unit_name,available_lecturers.unit_code,lecturer_login.lecturer_name FROM available_lecturers INNER JOIN lecturer_login ON lecturer_login.id = available_lecturers.lecturer_id
+
+
+
+id	unit_name	unit_code	course_name	duration	year	lecturer_id
