@@ -16,11 +16,7 @@
                     </li>
 
                     <li>
-<<<<<<< HEAD
-                        <a href="addUnit.php">
-=======
                         <a href="unitsList.php">
->>>>>>> main
                             <i class="fa fa-book" aria-hidden="true"></i>
                             <span>Units List</span>
                         </a>
@@ -56,16 +52,6 @@
                     </li>
 
                     <li>
-<<<<<<< HEAD
-                        <a href="#">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span>About</span>
-                        </a>
-                    </li>
-
-                    <li>
-=======
->>>>>>> main
                         <a href="logout.php">
                             <i class="fa fa-power-off" aria-hidden="true"></i>
                             <span>Logout</span>

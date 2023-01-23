@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
 <body>
     <!--<input type="checkbox"  id="checkbox">-->
     <header class="header">
-    <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
+            <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
     </header>
     <?php
             if(isset($_SESSION['status'])){

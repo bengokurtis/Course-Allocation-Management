@@ -4,7 +4,7 @@ include "./main/header.php";
 ?>
 <body>
     <header class="header">
-        <h2 class="u-name">Mind <b>Hub</b></h2>
+        <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
     </header>
 
     <div class="container">
