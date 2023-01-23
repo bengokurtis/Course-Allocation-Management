@@ -1,16 +1,32 @@
-<html lang="en">
 <?php
 include "../db/db-connect.php";
 ?>
-<html lang="en">
+<?php
+if(isset($_POST['submit'])){
+   $fullname = $_POST['fullname'];
+   $username = $_POST['username'];
+   $password = md5($_POST['password']);
 
+  $sql = "INSERT into tbl_admin(full_name,user_name,password) VALUES('$fullname','$username','$password')";
+  $res = mysqli_query($conn,$sql);
+   
+  if($res){
+    $_SESSION['add'] = "Admin added successfully";
+    header("location:".SITEURL.'admin/index.php');
+  } else {
+    $_SESSION['add'] = "Failed to add admin";
+    header("location:".SITEURL.'admin/regiter.php');
+  }
+}
+
+?>
+<html lang="en">
     <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
     <link rel="icon" href="IMG/MindHub logo.png" type="image/icon type">
     <link rel="stylesheet" href="../Login/style.css">
     <title>MindHub</title>
@@ -25,44 +41,24 @@ include "../db/db-connect.php";
           <img class="img-logo" src="../IMG/MindHub-logo.png" alt="logo">
           <span class="h1 fw-bold mb-0">Mind Hub</span>
         </div>
-        <?php
-        if(isset($_SESSION['login-error'])){
-            ?>
-        <div class="alert alert-danger alert-dismissible fade show">
-         <?php echo $_SESSION['login-error']; ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-    <?php
-            unset($_SESSION['login-error']);
-        }?>
 
-        <!-------User Session------>
-
-        <?php
-        if(isset($_SESSION['Not-a-user'])){
-            ?>
-        <div class="alert alert-danger alert-dismissible fade show">
-         <?php echo $_SESSION['Not-a-user']; ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-    <?php
-            unset($_SESSION['Not-a-user']);
-        }?>
-
-        <!------- End User Session------>
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
           <form style="width: 23rem;" method="post" action="#">
 
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Register!</h3>
 
             <div class="form-outline mb-4">
-              <input type="text" id="form2Example18" class="form-control form-control-lg" / name="username">
+              <input type="text" id="form2Example18" class="form-control form-control-lg" name="fullname" />
+              <label class="form-label" for="form2Example18">Full Name</label>
+            </div>
+            <div class="form-outline mb-4">
+              <input type="text" id="form2Example18" class="form-control form-control-lg" name="username" />
               <label class="form-label" for="form2Example18">Username</label>
             </div>
 
             <div class="form-outline mb-4">
-              <input type="password" id="form2Example28" class="form-control form-control-lg"  name="password"/>
+              <input type="password" id="form2Example28" class="form-control form-control-lg" name="password" />
               <label class="form-label" for="form2Example28">Password</label>
             </div>
 
@@ -71,7 +67,7 @@ include "../db/db-connect.php";
             </div>
 
             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-            <p>Don't have an account? <a href="register.php" class="link-info">Register here</a></p>
+            <p>Already have an account? <a href="index.php" class="link-info">Login here</a></p>
 
           </form>
 
@@ -87,22 +83,4 @@ include "../db/db-connect.php";
 </section>
 </body>
 </html>
-<?php
-if(isset($_POST['submit'])){
-   $username = $_POST['username'];
-   $password = md5($_POST['password']);
 
-  $sql ="SELECT * FROM tbl_admin WHERE user_name='$username' AND password='$password'";
-  $result = mysqli_query($conn,$sql);
-  $count = mysqli_num_rows($result);
-  
-if($count === 1){
-  $_SESSION['login'] = "Login Successful!!!";
-  $_SESSION['user'] = $username;
-  header('location:'.SITEURL.'admin/dashboard.php');
-} else {
-  $_SESSION['login-error'] = "Password or Username do not match!!! ";
-  header('location:'.SITEURL.'admin/index.php');
-}
-}
-?>

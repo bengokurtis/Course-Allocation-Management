@@ -1,110 +1,104 @@
 <?php
-include "./admin/main/header.php";
+include "../db/db-connect.php";
 ?>
+<html lang="en">
 
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../IMG/MindHub-logo.png" type="image/icon type">
+    <link rel="stylesheet" href="../Login/style.css">
+    <title>MindHub</title>
+    </head>
 <body>
-    <!--<input type="checkbox"  id="checkbox">-->
-    <header class="header">
-        <h2 class="u-name">Mind <b>Hub</b>
-       <!--<label for="checkbox">
-            <i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
-        </label>-->
-        </h2>
-        
-        <div class="dropdown">
-            <i class="fa fa-users" aria-hidden="true"></i>
-            <div class="dropdown-content">
-              <a href="#"><i class="fa fa-address-book" aria-hidden="true"></i>Profile</a>
-              <a href="#">
-                <i class="fa fa-cogs" aria-hidden="true"></i>Settings
-              </a>
-              <a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i>Help</a>
-              
-            </div>
+<section class="vh-100">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 text-black">
+
+        <div class="px-5 ms-xl-4">
+          <img class="img-logo" src="../IMG/MindHub-logo.png" alt="logo">
+          <span class="h1 fw-bold mb-0">Mind Hub</span>
         </div>
-    
-    </header>
-    <div class="body">
-        <nav class="side-bar">
-            <div class="user-p">
-                <img src="../IMG/MindHub logo.png" alt="Display Picture">
-                <h4>Hello, user</h4>
-
-                <ul>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-files-o" aria-hidden="true"></i>
-                            <span>Reports</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                            <span>Department</span>
-                        </a>
-                    </li>
-
-                    
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span>Announcements</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span>About</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-power-off" aria-hidden="true"></i>
-                            <span>Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <section class="section-1">
-            <div class="row">
-                <div class="column">
-                    <ul>
-                        <li style="background: #38AEBF;">
-                            <a href="#">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                            <span>Allocations</span>
-                            </a>
-                        </li>
-
-                        <li style="background: #4FBF38;">
-                            <a href="#">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                            <span>Schedule</span>
-                            </a>
-                         </li>
-                         
-                    </ul>
-                </div>  
-            
-                <div class="column">
-                    <ul>
-                        <li style="background: #BF3838;">
-                            <a href="Availability.html">
-                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                <span>Book Course</span>
-                            </a>
-                         </li>
-                    </ul>
-                </div>
-                
-            </div>
-        </section>
-       
+        <?php
+        if(isset($_SESSION['login-error'])){
+            ?>
+        <div class="alert alert-danger alert-dismissible fade show">
+         <?php echo $_SESSION['login-error']; ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
+    <?php
+            unset($_SESSION['login-error']);
+        }?>
+
+        <!-------User Session------>
+
+        <?php
+        if(isset($_SESSION['Not-a-user'])){
+            ?>
+        <div class="alert alert-danger alert-dismissible fade show">
+         <?php echo $_SESSION['Not-a-user']; ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php
+            unset($_SESSION['Not-a-user']);
+        }?>
+
+        <!------- End User Session------>
+        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+          <form style="width: 23rem;" method="post" action="#">
+
+            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+
+            <div class="form-outline mb-4">
+              <input type="text" id="form2Example18" class="form-control form-control-lg" / name="username">
+              <label class="form-label" for="form2Example18">Enter Lecturer id</label>
+            </div>
+
+            <div class="pt-1 mb-4">
+              <button class="btn btn-info btn-lg btn-block" type="submit" name="submit">Login</button>
+            </div>
+
+            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
+            <p>Don't have an account? <a href="register.php" class="link-info">Register here</a></p>
+
+          </form>
+
+        </div>
+
+      </div>
+      <div class="col-sm-6 px-0 d-none d-sm-block">
+        <img src="../IMG/TUK-Back.jpg"
+          alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+      </div>
+    </div>
+  </div>
+</section>
 </body>
 </html>
+<?php
+if(isset($_POST['submit'])){
+   $username = $_POST['username'];
+  
+
+  $sql ="SELECT * FROM lecturer_login WHERE lec_login_id='$username'";
+  $result = mysqli_query($conn,$sql);
+  $count = mysqli_num_rows($result);
+  
+if($count === 1){
+  $row = mysqli_fetch_assoc($result);
+  $lecname = $row['lecturer_name'];
+  $_SESSION['login'] = "Login Successful!!!";
+  $_SESSION['user'] = $lecname;
+  header('location:'.SITEURL.'Lecturer/dashboard.php');
+} else {
+  $_SESSION['login-error'] = "Password or Username do not match!!! ";
+  header('location:'.SITEURL.'Lecturer/index.php');
+}
+}
+?>

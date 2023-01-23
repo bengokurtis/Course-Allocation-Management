@@ -239,6 +239,10 @@ body {
     font-size: 23px;
 }
 
+h2 a {
+    text-decoration: none;
+}
+
 
 /*
 #navbtn{

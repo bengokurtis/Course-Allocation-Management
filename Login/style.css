@@ -1,22 +1,39 @@
-@media screen and (max-width: 300px){
-    body{
+@media screen and (max-width: 300px) {
+    body {
         width: 100%;
     }
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.tagline img{
+.img-logo {
+    height: auto;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.px-5 {
+    margin-top: 10px;
+}
+
+.alert {
+    margin-inline: 100px;
+    margin-block-start: 20px;
+}
+
+.tagline img {
     max-width: 500px;
     align-items: center;
     display: flex;
     margin-top: 250px;
     margin-left: 60px;
 }
-.container1 {
 
+.container1 {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -27,46 +44,43 @@
     padding-left: 100px;
 }
 
-body .container1 form{
+body .container1 form {
     font-family: Arial, Helvetica, sans-serif;
     width: 500px;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.container1 .form-select{
+.container1 .form-select {
     color: black;
     padding: 8px;
     margin-bottom: 10px;
 }
 
-.container1 select{
+.container1 select {
     width: 100%;
     padding: 10px;
     border-radius: 8px;
-
 }
 
-.container1 .form-text{
+.container1 .form-text {
     color: #FD4D0C;
 }
 
-.container1 form a{
+.container1 form a {
     text-decoration: none;
     color: dodgerblue;
 }
 
-
-
-.container1 .signin-card form{
+.container1 .signin-card form {
     width: 400px;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.container1 .signin-card input{
+.container1 .signin-card input {
     padding: 8px;
     margin: 10px 0;
     width: 350px;

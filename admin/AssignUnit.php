@@ -45,11 +45,18 @@ include "./main/header.php";
             <select name="lec-name" id="lec-name" onchange="GetCredit(this.value)" required>
                 <option value="select lecturer">---Select lecturer---</option>
             </select><br>
-                    
-            <div>
-                <button class="btn btn-primary" name='submit' type='submit'>Assign</button>
-                <a href="./allocations.php" style="float: right; color: dodgerblue; text-decoration: none; margin-top: 20px;">View</a>
-            </div>
+            <label for="course-code">Course code</label><br>
+            <select name="course-code" onchange="getCourse(this.value)">
+            <option value="select-credit">--Select course credit--</option>
+                <option value="<?php echo $row['id'];?>"></option>
+            </select><br>
+            <label for="course-name">Course Name</label><br>
+            <input type="text" name="course-name" id="course-name"><br>
+
+            <label for="course-credit">Course credit</label><br>
+            <input type="number" name="course-credit" id="course-credit"><br>
+
+            <button class="btn btn-primary" name='submit' type='submit'>Add Lecturer</button>
         </form>
     </div>
 </body>
