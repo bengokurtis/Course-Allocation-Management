@@ -11,5 +11,6 @@ include "login-checker.php";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="icon" href="../IMG/MindHub-logo.png" type="image/icon type">
     <link rel="stylesheet" href="../css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
     <title>MindHub | Lecturer</title>
 </head>

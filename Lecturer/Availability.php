@@ -32,6 +32,17 @@ include './includes/header.php';
     <header class="header">
     <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
     </header>
+    <?php
+            if(isset($_SESSION['booked'])){
+                ?>
+            <div class="alert alert-success alert-dismissible fade show">
+                <strong><?php echo $_SESSION['booked']; ?></strong> 
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+           </div>
+           <?php
+           unset($_SESSION['booked']);
+            }
+           ?>
     
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for unit..">
 
@@ -80,7 +91,7 @@ include './includes/header.php';
     </div>
 </body>
 </html>
-<?php echo $_SESSION['user'];?>
+
 
 
 
