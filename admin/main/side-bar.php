@@ -9,37 +9,41 @@
 
                 <ul>
                     <li>
-                        <a href="addLecturer.php">
-                            <i class="fa fa-users" aria-hidden="true"></i>
-                            <span>Lecturers List</span>
+                        <a href="addUnit.php">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                            <span>Add Units</span>
                         </a>
                     </li>
 
                     <li>
+<<<<<<< HEAD
                         <a href="addUnit.php">
+=======
+                        <a href="unitsList.php">
+>>>>>>> main
                             <i class="fa fa-book" aria-hidden="true"></i>
                             <span>Units List</span>
                         </a>
                     </li>
 
+
                     <li>
-                        <a href="#">
+                        <a href="allocations.php">
                             <i class="fa fa-address-book" aria-hidden="true"></i>
                             <span>Allocations</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="addDepartment.php">
-                            <i class="fa fa-university" aria-hidden="true"></i>
-                            <span>Departments</span>
-                        </a>
-                    </li>
-
+                        <a href="lecturerList.php">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                            <span>Lecturers List</span>
+                        </li>                       
+                    
                     <li>
                         <a href="#">
-                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                            <span>Statistics</span>
+                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                            <span>Students List</span>
                         </a>
                     </li>
 
@@ -52,6 +56,7 @@
                     </li>
 
                     <li>
+<<<<<<< HEAD
                         <a href="#">
                             <i class="fa fa-info-circle" aria-hidden="true"></i>
                             <span>About</span>
@@ -59,6 +64,8 @@
                     </li>
 
                     <li>
+=======
+>>>>>>> main
                         <a href="logout.php">
                             <i class="fa fa-power-off" aria-hidden="true"></i>
                             <span>Logout</span>

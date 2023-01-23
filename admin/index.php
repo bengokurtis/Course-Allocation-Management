@@ -1,3 +1,4 @@
+<html lang="en">
 <?php
 include "../db/db-connect.php";
 ?>
