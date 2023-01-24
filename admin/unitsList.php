@@ -43,27 +43,43 @@ include "./main/header.php";
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Unit Name</th>
-                    <th scope="col">Unit code</th>
+                    <th scope="col" style='width:150px;'>Unit Name</th>
+                    <th scope="col" style='width:100px;'>Unit code</th>
                     <th scope="col">Course Name</th>
-                    <th scope="col">Year taught</th>
+                    <th scope="col">Year</th>
                     <th scope="col">Term</th>
                     <th scope="col">Credit Hours</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
+                <?php 
+                $sql = "SELECT units.id,units.unit_code,units.unit_name,units.year,units.term,units.credit_hours,courses.course_name FROM units INNER JOIN courses on units.course_id = courses.id";
+                $result = mysqli_query($conn, $sql);
+                while($row = mysqli_fetch_assoc($result)){
+                  $id = $row['id'];  
+                  $unit_name = $row['unit_name'];
+                    $unit_code = $row['unit_code'];
+                    $course_name = $row['course_name'];
+                    $year = $row['year'];
+                    $term = $row['term'];
+                    $credit_hours = $row['credit_hours'];
+
+                ?>
                 <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Advanced Visual Programming</td>
-                    <td>ECII/3208</td>
-                    <td>B.Tech Information Technology</td>
-                    <td>3</td>
-                    <td>2</td>
-                    <td>48</td>
+                    <th scope="row"><?php echo $id;?></th>
+                    <td><?php echo $unit_name;?></td>
+                    <td><?php echo $unit_code;?></td>
+                    <td><?php echo $course_name;?></td>
+                    <td><?php echo $year;?></td>
+                    <td><?php echo $term;?></td>
+                    <td><?php echo $credit_hours;?></td>
                     <td><a href="./updateUnits.php" class="btn btn-success">Update</a></td>
                 </tr>
                 </tbody>
+                <?php } ?>
             </table>
     </div>
 </body>
 </html>
+

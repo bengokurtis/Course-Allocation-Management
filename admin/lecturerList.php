@@ -32,9 +32,9 @@ include "./main/header.php";
          <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
     </header>
     
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for unit..">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for lecturer..">
 
-    <h1>Allocations</h1>
+    <h1>Lecturer List</h1>
 
     <!--TABLE SECTION-->
     <div class="container2">
@@ -51,19 +51,34 @@ include "./main/header.php";
                     <th scope="col">Department Name</th>
                 </tr>
                 </thead>
+                <?php
+                $sql = "SELECT lecturers.id,lecturers.lecturer_name,lecturers.address,lecturers.email,lecturers.contact_no,lecturers.designation,departments.department_name FROM lecturers INNER JOIN departments on lecturers.department_id = departments.id";
+                $result = mysqli_query($conn, $sql); 
+                while($row= mysqli_fetch_assoc($result)){
+                    $id = $row['id'];
+                    $lecturer_name = $row['lecturer_name'];
+                    $address = $row['address'];
+                    $email = $row['email'];
+                    $contact_no = $row['contact_no'];
+                    $designation = $row['designation'];
+                    $department_name = $row['department_name'];
+                
+                ?>
                 <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Felix Okoth</td>
-                    <td>00100 Nairobi</td>
-                    <td>okoth@gmail.com</td>
-                    <td>0757960890</td>
-                    <td>Lecturer</td>
-                    <td>Computer Science</td>
+                    <th scope="row"><?php echo $id;?></th>
+                    <td><?php echo $lecturer_name;?></td>
+                    <td><?php echo $address;?></td>
+                    <td><?php echo $email;?></td>
+                    <td><?php echo $contact_no;?></td>
+                    <td><?php echo $designation;?></td>
+                    <td><?php echo $department_name;?></td>
 
                     <td><a href="./updateLecturer.php" class="btn btn-success">Update</a></td>
                 </tr>
                 </tbody>
+                <?php
+                }?>
             </table>
     </div>
 </body>

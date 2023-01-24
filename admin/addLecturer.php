@@ -16,6 +16,8 @@ if(isset($_POST['submit'])){
     $sql = "INSERT INTO lecturers(department_id,lecturer_name,address,email,contact_no,designation,lec_reg_no) VALUES('$lecturerdepartment','$lecturername','$lectureraddress','$lectureremail','$lecturercontact','$lecturerdesignation','$lecturerRegNo')";
     $result = mysqli_query($conn,$sql);
     if($result){
+        $sql2 = "INSERT INTO lecturer_login(lecturer_name,lec_login_id) VALUES('$lecturername','$lecturerRegNo')";
+        $res2 = mysqli_query($conn,$sql2);
        $_SESSION['status'] = "Lecturer added successfully!!";
     }
 
