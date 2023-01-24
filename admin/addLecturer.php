@@ -35,7 +35,7 @@ include "./main/header.php";
 
         <div>            
             <button class="btn btn-primary" name='submit' type='submit'>Assign</button>
-            <a href="./allocations.php" style="float: right; color: dodgerblue; text-decoration: none; margin-top: 20px;">View</a>
+            <a href="./lecturerList.php" style="float: right; color: dodgerblue; text-decoration: none; margin-top: 20px;">View</a>
         </div>
 
         </form>

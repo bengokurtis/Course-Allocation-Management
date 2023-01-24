@@ -9,10 +9,6 @@
 .box{
     width: 950px;
 }
-.container table {
-    flex: 50%;
-    padding: 5px;
-  }
 
 .container table {
     background-color: #fff;

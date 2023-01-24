@@ -1,6 +1,7 @@
 <html lang="en">
     <?php
-    include "./admin/main/header.php";
+    include "./admin/main/header.php
+    ";
     ?>
     
 <body>

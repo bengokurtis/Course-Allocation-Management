@@ -77,7 +77,7 @@ include "./admin/main/header.php";
                         <li style="background: #38AEBF;">
                             <a href="#">
                             <i class="fa fa-book" aria-hidden="true"></i>
-                            <span>Allocations</span>
+                            <span>My Allocations</span>
                             </a>
                         </li>
 
@@ -94,7 +94,7 @@ include "./admin/main/header.php";
                 <div class="column">
                     <ul>
                         <li style="background: #BF3838;">
-                            <a href="Availability.html">
+                            <a href="./Availability.php">
                                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span>Book Course</span>
                             </a>

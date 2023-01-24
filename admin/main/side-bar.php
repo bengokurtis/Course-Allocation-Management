@@ -2,14 +2,14 @@
             <div class="user-p">
                 <ul>
                     <li>
-                        <a href="Main/addUnit.html">
+                        <a href="./admin/addUnit.php">
                             <i class="fa fa-book" aria-hidden="true"></i>
                             <span>Add Units</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="Main/unitsList.html">
+                        <a href="./admin/unitsList.php">
                             <i class="fa fa-book" aria-hidden="true"></i>
                             <span>Units List</span>
                         </a>
@@ -17,14 +17,14 @@
 
 
                     <li>
-                        <a href="Main/allocations.html">
+                        <a href="./admin/allocations.php">
                             <i class="fa fa-address-book" aria-hidden="true"></i>
                             <span>Allocations</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="Main/lecturerList.html">
+                        <a href="./admin/lecturerList.php">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             <span>Lecturers List</span>
                         </li>                       
