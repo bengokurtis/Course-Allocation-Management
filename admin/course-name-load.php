@@ -23,9 +23,9 @@ if ($user_id !== "") {
 
 // Store it in a array
  
-    $result = array($rows);
+   
 
-     echo $myJSON = json_encode($result);
+     echo $myJSON = json_encode($rows);
 
 
 
@@ -35,3 +35,5 @@ if ($user_id !== "") {
 
 
 ?>
+
+

@@ -19,9 +19,10 @@ function getCourse(str) {
 
                 // Typical action to be performed
                 // when the document is ready
-                console.log(this.responseText);
+
                 var myObj = JSON.parse(this.responseText);
-                console.log(myObj[0][0].credit_hours);
+                console.log(myObj[0].id);
+
 
 
 
@@ -30,16 +31,16 @@ function getCourse(str) {
                 // string and store this array in
                 // a variable assign the value
                 // received to first name input field
-                document.getElementById("unit-name").value = myObj[0][0].unit_name;
-                document.getElementById("course-credit").value = myObj[0][0].credit_hours;
+                document.getElementById("unit-name").value = myObj[0].unit_name;
+                document.getElementById("course-credit").value = myObj[0].credit_hours;
                 const select = document.getElementById("lec-name");
                 removeOpt();
                 console.log(myObj);
-                for (i = 0; i < 50; i++) {
+                for (i = 0; i < myObj.length; i++) {
                     const option = document.createElement("option");
                     option.setAttribute("id", "lec-man");
-                    option.value = myObj[0][i].lecturer;
-                    option.innerHTML = myObj[0][i].lecturer;
+                    option.value = myObj[i].lecturer;
+                    option.innerHTML = myObj[i].lecturer;
 
 
                     select.appendChild(option);

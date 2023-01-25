@@ -49,16 +49,28 @@ include "./main/header.php";
                     <th scope="col">Lecturer</th>
                 </tr>
                 </thead>
+                <?php 
+                $sql = "SELECT course_assign_to_teachers.id,units.unit_name,units.unit_code,departments.department_name,course_assign_to_teachers.lecturer FROM course_assign_to_teachers INNER JOIN units ON units.id = course_assign_to_teachers.unit_id INNER JOIN departments on departments.id = course_assign_to_teachers.department_id";
+                $result = mysqli_query($conn,$sql);
+                while($row = mysqli_fetch_assoc($result)){
+                    $id = $row['id'];  
+                    $unit_name = $row['unit_name'];
+                    $unit_code = $row['unit_code'];
+                    $department_name = $row['department_name'];
+                    $lecturer = $row['lecturer'];
+                
+                ?>
                 <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Advanced Visual Programming</td>
-                    <td>ECII/3208</td>
-                    <td>Computer Science</td>
-                    <td>Felix Okoth</td>
+                    <th scope="row"><?php echo $id;?></th>
+                    <td><?php echo $unit_name;?></td>
+                    <td style="width:100px;"><?php echo $unit_code;?></td>
+                    <td><?php echo $department_name;?></td>
+                    <td><?php echo $lecturer;?></td>
                     <td><a href="./updateUnits.php" class="btn btn-success">Update</a></td>
                 </tr>
                 </tbody>
+                <?php } ?>
             </table>
     </div>
 </body>

@@ -9,6 +9,17 @@ include "./main/header.php";
     <header class="header">
     <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
     </header>
+    <?php
+            if(isset($_SESSION['status'])){
+                ?>
+            <div class="alert alert-success alert-dismissible fade show">
+                <strong><?php echo $_SESSION['status']; ?></strong> 
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+           </div>
+           <?php
+           unset($_SESSION['status']);
+            }
+           ?>
 
     <div class="container">
 
@@ -22,7 +33,7 @@ include "./main/header.php";
        $result = mysqli_query($conn,$sql); 
        ?>
        <label for="department-name">Department name</label><br>
-    <select name="dept-name" id="dept-name" onchange="GetDetail(this.value)">
+    <select name="dept-name" id="dept-name" >
     <option value="select department">---Select department---</option>   
     <?php while($row = mysqli_fetch_array($result)):;?>
        <option value="<?php echo $row['id'];?>"><?php echo $row['department_name'];?></option>
@@ -68,3 +79,21 @@ include "./main/header.php";
 </body>
 
 </html>
+<?php 
+
+if(isset($_POST['submit'])){
+      $departmentname = $_POST['dept-name'];
+      $unit_code = $_POST['unit-code'];
+      $unit_credit = $_POST['course-credit'];
+      $lecname = $_POST['lec-name'];
+      $coursename = $_POST['course-name'];
+
+     $sql = "INSERT INTO course_assign_to_teachers(department_id,unit_id,unit_credit,lecturer,course_id) VALUES('$departmentname','$unit_code','$unit_credit','$lecname','$coursename')";
+      $result = mysqli_query($conn,$sql);
+      if($result){
+          $_SESSION['status']= "Unit assigned successfully";
+    } else {
+        $_SESSION['status']= "Unit not assigned successfully";
+    }
+}
+?>
