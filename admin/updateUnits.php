@@ -2,7 +2,26 @@
 <?php
 include "./main/header.php";
 ?>
+<?php  
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $sql2 = "SELECT * FROM units WHERE id='$id'";
+    $result2 = mysqli_query($conn,$sql2);
+    $count = mysqli_num_rows($result2);
+    if($count === 1){
+        $row = mysqli_fetch_assoc($result2);
+        $unit_code = $row['unit_code'];
+        $unit_name = $row['unit_name'];
+        $credit_hours = $row['credit_hours'];
+    } else {
+        $_SESSION['status'] = "No record found";
+        header("Location: ".SITEURL."admin/unitsList.php");
+    }
+} else {
+    header("Location: ".SITEURL."admin/unitsList.php");
+}
 
+?>
 <body>
     <header class="header">
         <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
@@ -10,48 +29,26 @@ include "./main/header.php";
     
     <div class="container"> 
         <form method="post" action="#">
-            <h1>Update Unit</h1>
-            <label for="course-name">Course Name: </label><br>    
-            <div class=selection>           
-                <!--<select  name="course-name" id="course" multiple>
-                    <option value="B.Tech Information Technology">B.Tech Information Technology</option>
-                    <option value="B.Tech Computer Technology">B.Tech Computer Technology</option>
-                    <option value="B.Tech Computer Networks">B.Tech Computer Networks</option>
-                    <option value="Dip.Tech Information Technology">Dip.Tech Information Technology</option>
-                    <option value="Dip.Tech Computer Technology">Dip.Tech Computer Technology</option>
-                    <option value="Dip.Tech Computer Networks">Dip.Tech Computer Networks</option>
-                </select>-->
+            <h1>Update Unit</h1>         
+                <?php
+                    $sql = "SELECT * FROM courses";
+                    $result = mysqli_query($conn, $sql);
+                    ?>
+                    <label for="course-name">Course Name</label><br>
+                    <select name="course-name" id="course-name">
+                        <option value="year">--Select Course Name--</option>
+                        <?php while($row= mysqli_fetch_assoc($result)):;?>
+                        <option value="<?php echo $row['id'];?>"><?php echo $row['course_name'];?></option>
+                        <?php endwhile;?>
+                    </select><br>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">B.Tech Information Technology</label><br>
-                
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-check-label" for="flexCheckChecked">B.Tech Computer Technology</label><br>
-
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">B.Tech Computer Networks</label>
-                </div>
-
-
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-check-label" for="flexCheckChecked">Dip.Tech Information Technology</label><br>
-                
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">Dip.Tech Computer Technology</label><br>
-                
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-check-label" for="flexCheckChecked">Dip.Tech Computer Networks</label><br>
-                </div>
-
-            </div>
+            
     
             <label for="unit-code">Unit Code: </label><br>
-            <input type="text" name="unit-code" id="unit-code" placeholder="Type the unit code" required><br>
+            <input type="text" name="unit-code" id="unit-code" placeholder="Type the unit code" value="<?php echo $unit_code;?>" required><br>
             
             <label for="course-name">Unit Name: </label><br>
-            <input type="text" name="unit-name" id="unit-name" placeholder="Type the unit name" required><br>
+            <input type="text" name="unit-name" id="unit-name" placeholder="Type the unit name" value="<?php echo $unit_name;?>" required><br>
             
            
             <label for="year">Year taught: </label><br>
@@ -73,14 +70,35 @@ include "./main/header.php";
                 </select><br>
             
             <label for="unit-duration">Credit Hours: </label><br>
-                <input type="text" name="credit-hours" id="credit-hours" placeholder="Type the Credit Hours)" required><br>
+                <input type="text" name="credit-hours" id="credit-hours" placeholder="Type the Credit Hours" value="<?php echo $credit_hours;?>" required><br>
             
             <div>            
                 <button class="btn btn-success" name='submit' type='submit'>Update</button>
-                <a href="./unitsList.php" style="float: right; color: dodgerblue; text-decoration: none; margin-top: 20px;">View</a>
             </div>
 
         </form>
     </div>
 </body>
 </html>
+<?php
+
+if(isset($_POST['submit'])){
+    echo $course_id = $_POST['course-name'];
+    echo $unit_code = $_POST['unit-code'];
+    echo $unit_name = $_POST['unit-name'];
+    echo $year = $_POST['year'];
+    echo $term = $_POST['term'];
+    echo $credit_hours = $_POST['credit-hours'];
+
+    $sql3 = "UPDATE units SET course_id='$course_id', unit_code='$unit_code', unit_name='$unit_name', year='$year', term='$term', credit_hours='$credit_hours' WHERE id='$id'";
+    $result3 = mysqli_query($conn,$sql3);
+    if($result3){
+        $_SESSION['status'] = "Unit Updated Successfully";
+        header("Location: ".SITEURL."admin/unitsList.php");
+    } else {
+        $_SESSION['status'] = "Unit Not Updated";
+        header("Location: ".SITEURL."admin/unitsList.php");
+    }
+
+}
+?>

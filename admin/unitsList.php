@@ -31,6 +31,17 @@ include "./main/header.php";
     <header class="header">
         <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
     </header>
+          <?php
+               if(isset($_SESSION['status'])){
+                   ?>
+               <div class="alert alert-success alert-dismissible fade show">
+                   <strong><?php echo $_SESSION['status']; ?></strong> 
+                   <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              </div>
+              <?php
+              unset($_SESSION['status']);
+               }
+           ?>
     
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for unit..">
 
@@ -74,7 +85,7 @@ include "./main/header.php";
                     <td><?php echo $year;?></td>
                     <td><?php echo $term;?></td>
                     <td><?php echo $credit_hours;?></td>
-                    <td><a href="./updateUnits.php" class="btn btn-success">Update</a></td>
+                    <td><a href="<?php echo SITEURL?>admin/updateUnits.php?id=<?php echo $id;?>" class="btn btn-success">Update</a></td>
                 </tr>
                 </tbody>
                 <?php } ?>
