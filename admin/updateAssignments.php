@@ -2,7 +2,28 @@
 <?php
 include "./main/header.php";
 ?>
+<?php
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $sql2 = "SELECT course_assign_to_teachers.id,units.unit_name,units.unit_code,departments.department_name,course_assign_to_teachers.lecturer FROM course_assign_to_teachers INNER JOIN units ON units.id = course_assign_to_teachers.unit_id INNER JOIN departments on departments.id = course_assign_to_teachers.department_id WHERE course_assign_to_teachers.id = '$id'";
+    $result2 = mysqli_query($conn,$sql2);
+    $count = mysqli_num_rows($result2);
+    if($count === 1){
+        $row = mysqli_fetch_assoc($result2);
+        $dept_name = $row['department_name'];
+        $unit_code = $row['unit_code'];
+        $unit_name = $row['unit_name'];
+        $lec_name = $row['lecturer'];
+        
+    } else {
+        $_SESSION['status'] = "No record found";
+        header("Location: ".SITEURL."admin/assignmentsList.php");
+    }
+} else {
+    header("Location: ".SITEURL."admin/assignmentsList.php");
+}
 
+?>
 <body>
 
     <!--Top-Bar-->
@@ -22,43 +43,34 @@ include "./main/header.php";
                 $result = mysqli_query($conn,$sql); 
                 ?>
             <label for="department-name">Department name</label><br>
-            <select name="dept-name" id="dept-name" onchange="GetDetail(this.value)">
-            <option value="select department">---Select department---</option>   
-            <?php while($row = mysqli_fetch_array($result)):;?>
-                <option value="<?php echo $row['id'];?>"><?php echo $row['department_name'];?></option>
-                <?php endwhile?>*/
-            </select><br>
-            
-                
-            <?php
-                $sql = "SELECT * from courses";
-                $result = mysqli_query($conn,$sql); 
-            ?>
+            <input name="dept-name" id="dept-name" readonly value="<?php echo $dept_name;?>">
             <label for="unit-code">Unit Code</label><br>
-            <select name="unit-code" onchange="getCourse(this.value)">
-            <option value="select-credit">--Select Unit Credit--</option>
-                <?php while($row = mysqli_fetch_array($result)):;?>
-                <option value="<?php echo $row['id'];?>"><?php echo $row['course_code'];?></option>
-                <?php endwhile?>
-            </select><br>
+            <input name="unit-code" id="unit-code" readonly value="<?php echo $unit_code;?>">
 
-            <?php
-                $sql = "SELECT * from courses";
-                $result = mysqli_query($conn,$sql); 
-            ?>
             <label for="unit-name">Unit Name</label><br>
-            <input type="text" name="unit-name" id="unit-name" required><br>
+            <input type="text" name="unit-name" id="unit-name" readonly value="<?php echo $unit_name;?>" required><br>
             
             <label for="lecturer-name">Lecturer</label><br>
-            <select name="lec-name" id="lec-name" onchange="GetCredit(this.value)">
-                <option value="select lecturer">---Select lecturer---</option>
-            </select><br>
-                    
+            <input name="lec-name" id="lec-name" value="<?php echo $lec_name;?>">                    
             <div>
                 <button class="btn btn-success" name='submit' type='submit'>Update</button>
-                <a href="#" style="float: right; color: dodgerblue; text-decoration: none; margin-top: 20px;">View</a>
             </div>
         </form>
     </div>
 </body>
 </html>
+<?php 
+if(isset($_POST['submit'])){
+    $lecturer = $_POST['lec-name'];
+    $sql3 = "UPDATE course_assign_to_teachers SET lecturer = '$lecturer' WHERE id = '$id'";
+    $result3 = mysqli_query($conn,$sql3);
+    if($result3){
+        $_SESSION['status'] = "Assignment updated successfully";
+        header("Location: ".SITEURL."admin/updateAssignments.php");
+    } else {
+        $_SESSION['status'] = "Failed to update assignment";
+        header("Location: ".SITEURL."admin/updateAssignments.php");
+    }
+}
+
+?>
