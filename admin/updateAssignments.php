@@ -17,10 +17,10 @@ if(isset($_GET['id'])){
         
     } else {
         $_SESSION['status'] = "No record found";
-        header("Location: ".SITEURL."admin/assignmentsList.php");
+        header("Location: ".SITEURL."admin/allocations.php");
     }
 } else {
-    header("Location: ".SITEURL."admin/assignmentsList.php");
+    header("Location: ".SITEURL."admin/allocations.php");
 }
 
 ?>
@@ -66,10 +66,10 @@ if(isset($_POST['submit'])){
     $result3 = mysqli_query($conn,$sql3);
     if($result3){
         $_SESSION['status'] = "Assignment updated successfully";
-        header("Location: ".SITEURL."admin/updateAssignments.php");
+        header("Location: ".SITEURL."admin/allocations.php");
     } else {
         $_SESSION['status'] = "Failed to update assignment";
-        header("Location: ".SITEURL."admin/updateAssignments.php");
+        header("Location: ".SITEURL."admin/allocations.php");
     }
 }
 

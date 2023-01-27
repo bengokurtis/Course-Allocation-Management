@@ -59,13 +59,6 @@ include "./main/header.php";
                             </a>
                         </li>
 
-                        <li style="background: #900C3F;">
-                            <a href="#">
-                                <i class="fa fa-address-book" aria-hidden="true"></i>
-                                <span>Register</span>
-                            </a>
-                        </li>
-
                     </ul>
                 </div>
 
@@ -81,13 +74,6 @@ include "./main/header.php";
                             <a href="addLecturer.php">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span>Lecturers</span>
-                            </a>
-                        </li>
-
-                        <li style="background: #581845;">
-                            <a href="#">
-                                <i class="fa fa-desktop" aria-hidden="true"></i>
-                                <span>Applications</span>
                             </a>
                         </li>
                     </ul>
