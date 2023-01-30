@@ -1,13 +1,13 @@
-<html lang="en">
+
     <?php
-    include "./admin/main/header.php";
+    include "./includes/header.php";
     ?>
     
 <body>
 
     <!--Top-Bar-->
     <header class="header">
-        <h2 class="u-name">Mind <b>Hub</b></h2>
+    <h2 class="u-name"><a href="index.php">Mind <b>Hub</b></a></h2>
     </header>
         <!--INPUT SECTION-->
             <div class="form-group" style="width: 850px;">
@@ -35,16 +35,29 @@
                         </tr>
                         </thead>
                         <tbody>
+                            <?php
+                            $sql = "SELECT course_assign_to_teachers.id,courses.course_name,units.unit_code,units.year,units.term,course_assign_to_teachers.unit_credit,course_assign_to_teachers.lecturer FROM course_assign_to_teachers INNER JOIN courses on courses.id = course_assign_to_teachers.course_id INNER JOIN units on units.id = course_assign_to_teachers.unit_id";
+                            $result = mysqli_query($conn,$sql);
+                            while($row = mysqli_fetch_assoc($result)){
+                                  $id = $row['id'];
+                                  $course_name = $row['course_name'];
+                                  $unit_code = $row['unit_code'];
+                                  $unit_credit = $row['unit_credit'];
+                                  $lecturer = $row['lecturer'];
+                                  $duration = $row['year'].".".$row['term']; 
+
+                            ?>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Advanced Visual Programming</td>
-                            <td>ECII/3208</td>
-                            <td>42Hrs</td>
-                            <td>Felix Okoth</td>
-                            <td>3.2</td>
-                            <td><a href="#" class="btn btn-success">Enroll</a></td>
+                            <th scope="row"><?php echo $id;?></th>
+                            <td><?php echo $course_name;?></td>
+                            <td><?php echo $unit_code;?></td>
+                            <td><?php echo $unit_credit;?></td>
+                            <td><?php echo $lecturer;?></td>
+                            <td><?php echo $duration;?></td>
+                            <td><a href="enroll.php" class="btn btn-success">Enroll</a></td>
                         </tr>
-                        </tbody>
+                        <?php };?>
+                            </tbody>
                     </table>
             </div>
         </div>

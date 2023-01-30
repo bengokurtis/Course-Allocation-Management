@@ -1,3 +1,4 @@
+<?php include "./db/db-connect.php";?>
 <html lang="en">
 
     <head>
@@ -23,13 +24,13 @@
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-          <form style="width: 23rem;">
+          <form style="width: 23rem;" method="post" action="#">
 
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in!</h3>
 
             <div class="form-outline mb-4">
-              <input type="email" id="form2Example18" class="form-control form-control-lg" />
-              <label class="form-label" for="form2Example18">Email address</label>
+              <input type="text" id="form2Example18" class="form-control form-control-lg" />
+              <label class="form-label" for="form2Example18">Registration Number</label>
             </div>
 
             <div class="form-outline mb-4">
@@ -38,7 +39,7 @@
             </div>
 
             <div class="pt-1 mb-4">
-              <button class="btn btn-info btn-lg btn-block" type="button">Login</button>
+              <button class="btn btn-info btn-lg btn-block" name="submit" type="submit">Login</button>
             </div>
 
             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
@@ -58,3 +59,22 @@
 </section>
 </body>
 </html>
+<?php
+if(isset($_POST['submit'])){
+    $username = $_POST['username'];
+    $password = md5($_POST['password']);
+
+    $query = "SELECT * FROM tbl_students WHERE student_reg_no = '$username' AND password = '$password'";
+    $result = mysqli_query($conn, $query);
+    if ($result){
+      $_SESSION['login'] = "Successfully logged in!";
+      $_SESSION['username'] = $username;
+      header("Location:".SITEURL."Students/index.php");
+    }
+
+
+}
+
+
+
+?>
