@@ -7,10 +7,17 @@ include "./includes/header.php";
     <!--<input type="checkbox"  id="checkbox">-->
     <header class="header">
     <h2 class="u-name"><a href="index.php">Mind <b>Hub</b></a></h2>
-       <!--<label for="checkbox">
-            <i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
-        </label>-->
-        </h2>
+    <?php
+            if(isset($_SESSION['login'])){
+                ?>
+            <div class="alert alert-success alert-dismissible fade show">
+                <strong><?php echo $_SESSION['login']; ?></strong> 
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+           </div>
+           <?php
+           unset($_SESSION['login']);
+            }
+           ?>
         
         <div class="dropdown">
             <i class="fa fa-users" aria-hidden="true"></i>
