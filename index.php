@@ -72,17 +72,20 @@
 if(isset($_POST['submit'])){
      $username = $_POST['username'];
      $password = md5($_POST['password']);
+     
 
     $query = "SELECT * FROM tbl_students WHERE student_reg_no = '$username' AND password = '$password'";
     $result = mysqli_query($conn, $query);
     $count = mysqli_num_rows($result);
     if ($count === 1){
+      $row = mysqli_fetch_assoc($result);
+      $student_name = $row['full_name'];
       $_SESSION['login'] = "Login Successful";
-      $_SESSION['user'] = $username;
-      header("Location:".SITEURL."Students/index.php");
+      $_SESSION['user'] = $student_name;
+      header("Location:Students/dashboard.php");
     } else {
       $_SESSION['login-error'] = "Login Failed";
-      header("Location:".SITEURL."index.php");
+      header("Location:index.php");
     }
 
 

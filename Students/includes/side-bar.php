@@ -1,7 +1,7 @@
 <nav class="side-bar">
             <div class="user-p">
                 <img src="../IMG/MindHub logo.png" alt="Display Picture">
-                <h4>Hello, user</h4>
+                <h4>Hello, <?php echo $_SESSION['user'];?></h4>
 
                 <ul>
                     <li>

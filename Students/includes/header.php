@@ -1,6 +1,6 @@
 <?php 
 include "../db/db-connect.php";
-include "./includes/login-checker.php";
+include "login-checker.php";
 
 ?>
 <html lang="en">
