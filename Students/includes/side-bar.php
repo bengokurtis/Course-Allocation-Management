@@ -5,7 +5,7 @@
 
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="unitLists.php">
                             <i class="fa fa-book" aria-hidden="true"></i>
                             <span>My Units</span>
                         </a>

@@ -39,7 +39,8 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Course Name</th>
-                            <th scope="col">Course code</th>
+                            <th scope="col">Unit Name</th>
+                            <th scope="col" style="width:100px;">Unit code</th>
                             <th scope="col">Duration</th>
                             <th scope="col">Lecturer</th>
                             <th scope="col">Year</th>
@@ -47,11 +48,12 @@
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT course_assign_to_teachers.id,courses.course_name,units.unit_code,units.year,units.term,course_assign_to_teachers.unit_credit,course_assign_to_teachers.lecturer FROM course_assign_to_teachers INNER JOIN courses on courses.id = course_assign_to_teachers.course_id INNER JOIN units on units.id = course_assign_to_teachers.unit_id";
+                            $sql = "SELECT course_assign_to_teachers.id,courses.course_name,units.unit_name,units.unit_code,units.year,units.term,course_assign_to_teachers.unit_credit,course_assign_to_teachers.lecturer FROM course_assign_to_teachers INNER JOIN courses on courses.id = course_assign_to_teachers.course_id INNER JOIN units on units.id = course_assign_to_teachers.unit_id";
                             $result = mysqli_query($conn,$sql);
                             while($row = mysqli_fetch_assoc($result)){
                                   $id = $row['id'];
                                   $course_name = $row['course_name'];
+                                  $unit_name = $row['unit_name'];
                                   $unit_code = $row['unit_code'];
                                   $unit_credit = $row['unit_credit'];
                                   $lecturer = $row['lecturer'];
@@ -61,6 +63,7 @@
                         <tr>
                             <th scope="row"><?php echo $id;?></th>
                             <td><?php echo $course_name;?></td>
+                            <td><?php echo $unit_name;?></td>
                             <td><?php echo $unit_code;?></td>
                             <td><?php echo $unit_credit;?></td>
                             <td><?php echo $lecturer;?></td>
