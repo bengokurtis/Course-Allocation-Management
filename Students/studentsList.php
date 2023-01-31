@@ -1,5 +1,5 @@
 <?php
-include "./admin/main/header.php";
+include "./includes/header.php";
 ?>
 
 <script>

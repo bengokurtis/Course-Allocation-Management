@@ -7,7 +7,7 @@
 
     <!--Top-Bar-->
     <header class="header">
-    <h2 class="u-name"><a href="index.php">Mind <b>Hub</b></a></h2>
+    <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
     </header>
         <!--INPUT SECTION-->
             <div class="form-group" style="width: 850px;">
@@ -19,6 +19,17 @@
                 <option value="">Year of Study</option>
                 </select>
             </div>
+            <?php
+               if(isset($_SESSION['enroll'])){
+                   ?>
+               <div class="alert alert-success alert-dismissible fade show">
+                   <strong><?php echo $_SESSION['enroll']; ?></strong> 
+                   <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              </div>
+              <?php
+              unset($_SESSION['enroll']);
+               }
+           ?>
 
             <!--TABLE SECTION-->
             <div class="container">
@@ -54,7 +65,7 @@
                             <td><?php echo $unit_credit;?></td>
                             <td><?php echo $lecturer;?></td>
                             <td><?php echo $duration;?></td>
-                            <td><a href="enroll.php" class="btn btn-success">Enroll</a></td>
+                            <td><a href="<?php echo SITEURL?>Students/enroll.php?id=<?php echo $id;?>" class="btn btn-success">Enroll</a></td>
                         </tr>
                         <?php };?>
                             </tbody>
