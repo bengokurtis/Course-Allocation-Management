@@ -57,13 +57,6 @@ include "./includes/header.php";
                             <span>Schedule</span>
                             </a>
                          </li>
-
-                         <li style="background: #3884BF;">
-                            <a href="#">
-                                <i class="fa fa-sliders" aria-hidden="true"></i>
-                                <span>Progress</span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 
@@ -73,13 +66,3 @@ include "./includes/header.php";
     </div>
 </body>
 </html>
-
-<!--<div class="column" style=" width: 350px;">
-    <div class="card">
-        <img src="IMG/kurtis.jpg" alt="John" style="width:100%">
-        <h2>Kurtis Bengo</h2>
-        <p>BTech Info. Technology <Br>Year 4 Term/Semester 1</Br></p>
-      </div>
-
-
-</div>
