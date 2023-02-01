@@ -243,6 +243,15 @@ h2 a {
     text-decoration: none;
 }
 
+.display-img {
+    height: 150px;
+    width: 150px;
+}
+
+h4 {
+    font-size: 1.125rem;
+}
+
 
 /*
 #navbtn{

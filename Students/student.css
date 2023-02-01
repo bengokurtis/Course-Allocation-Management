@@ -1,4 +1,4 @@
-.container{
+.container {
     min-height: 100vh;
     display: flex;
     justify-content: flex-start;
@@ -6,13 +6,14 @@
     flex-direction: column;
 }
 
-.box{
+.box {
     width: 950px;
 }
+
 .container table {
     flex: 50%;
     padding: 5px;
-  }
+}
 
 .container table {
     background-color: #fff;
@@ -22,27 +23,35 @@
     border: 1px solid #ddd;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  
- th, td {
+}
+
+th,
+td {
     text-align: left;
     padding: 16px;
     text-decoration: none;
-  }
-  
-  table tr:nth-child(even) {
+}
+
+table tr:nth-child(even) {
     background-color: #f2f2f2;
-  }
+}
 
-
-.form-group{
+.form-group {
     display: flex;
     flex-wrap: row wrap;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .form-control{
+.form-control {
     margin: 30px;
+}
 
-  }
+h4 {
+    font-size: 1.125rem;
+}
+
+.display-img {
+    height: 150px;
+    width: 150px;
+}
