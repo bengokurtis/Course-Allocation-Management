@@ -31,9 +31,9 @@ include "./includes/header.php";
     <h2 class="u-name"><a href="dashboard.php">Mind <b>Hub</b></a></h2>
     </header>
     
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for unit..">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for student name..">
 
-    <h1>Allocations</h1>
+    <h1>Students List</h1>
 
     <!--TABLE SECTION-->
     <div class="container2">
