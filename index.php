@@ -57,11 +57,7 @@ include "./password-recovery/app_logic.php";
 
             <p>Staff <a href="Lecturer/index.php" class="link-info">Login</a></p>
             <p>Don't have an account? <a href="register.php" class="link-info">Register here</a></p>
-<<<<<<< HEAD
             
-=======
-            <p>Staff <a href="Lecturer/index.php" class="link-info">Login</a></p>
->>>>>>> b87bbe315eab910de678f6c840212e9d2e940a38
 
           </form>
 

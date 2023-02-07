@@ -3,7 +3,7 @@
                 <img class="display-img" src="../IMG/MindHub-logo.png" alt="Display Picture">
                 <h4>
                     <?php
-                    echo $_SESSION['user'];
+                    echo $_SESSION['user-admin'];
                     ?>
                 </h4>
 

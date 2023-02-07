@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
       $row = mysqli_fetch_assoc($result);
       $student_name = $row['full_name'];
       $_SESSION['login'] = "Login Successful";
-      $_SESSION['user'] = $student_name;
+      $_SESSION['user-student'] = $student_name;
       header("Location:Students/dashboard.php");
     } else {
       $_SESSION['login-error'] = "Login Failed";

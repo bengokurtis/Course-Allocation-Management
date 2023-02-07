@@ -98,7 +98,7 @@ if(isset($_POST['submit'])){
   
 if($count === 1){
   $_SESSION['login'] = "Login Successful!!!";
-  $_SESSION['user'] = $username;
+  $_SESSION['user-admin'] = $username;
   header('location:'.SITEURL.'admin/dashboard.php');
 } else {
   $_SESSION['login-error'] = "Password or Username do not match!!! ";

@@ -1,7 +1,7 @@
 <nav class="side-bar">
             <div class="user-p">
                 <img class="display-img" src="../IMG/TUK-Back.jpg" alt="Display Picture">
-                <h4>Hello, <?php echo $_SESSION['user'];?></h4>
+                <h4>Hello, <?php echo $_SESSION['user-student'];?></h4>
 
                 <ul>
                     <li>

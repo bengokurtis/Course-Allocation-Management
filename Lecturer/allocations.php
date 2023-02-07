@@ -60,7 +60,7 @@ include "./includes/header.php";
                 </tr>
                 </thead>
                 <?php 
-                $lecname = $_SESSION['user'];
+                $lecname = $_SESSION['user-lec'];
                 $sql = "SELECT course_assign_to_teachers.id,units.unit_name,units.unit_code,departments.department_name,course_assign_to_teachers.lecturer FROM course_assign_to_teachers INNER JOIN units ON units.id = course_assign_to_teachers.unit_id INNER JOIN departments on departments.id = course_assign_to_teachers.department_id where lecturer='$lecname'";
                 $result = mysqli_query($conn,$sql);
                 $count = 1;
