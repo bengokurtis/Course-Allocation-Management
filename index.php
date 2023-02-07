@@ -1,4 +1,8 @@
-<?php include "./db/db-connect.php";?>
+<?php 
+include "./db/db-connect.php";
+include "./password-recovery/app_logic.php";
+?>
+
 <html lang="en">
 
     <head>
@@ -36,9 +40,9 @@
           <form style="width: 23rem;" method="post" action="#">
 
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in!</h3>
-
+            <?php include('./password-recovery/messages.php'); ?>
             <div class="form-outline mb-4">
-              <input type="text" id="form2Example18" name="username" class="form-control form-control-lg" />
+              <input type="text" id="form2Example18"  name="username" class="form-control form-control-lg" />
               <label class="form-label" for="form2Example18">Registration Number</label>
             </div>
 
@@ -51,7 +55,7 @@
               <button class="btn btn-info btn-lg btn-block" name="submit" type="submit">Login</button>
             </div>
 
-            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
+            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="./password-recovery/enter_email.php">Forgot password?</a></p>
             <p>Don't have an account? <a href="register.php" class="link-info">Register here</a></p>
 
           </form>
@@ -68,29 +72,3 @@
 </section>
 </body>
 </html>
-<?php
-if(isset($_POST['submit'])){
-     $username = $_POST['username'];
-     $password = md5($_POST['password']);
-     
-
-    $query = "SELECT * FROM tbl_students WHERE student_reg_no = '$username' AND password = '$password'";
-    $result = mysqli_query($conn, $query);
-    $count = mysqli_num_rows($result);
-    if ($count === 1){
-      $row = mysqli_fetch_assoc($result);
-      $student_name = $row['full_name'];
-      $_SESSION['login'] = "Login Successful";
-      $_SESSION['user'] = $student_name;
-      header("Location:Students/dashboard.php");
-    } else {
-      $_SESSION['login-error'] = "Login Failed";
-      header("Location:index.php");
-    }
-
-
-}
-
-
-
-?>
