@@ -3,32 +3,10 @@
                 <img class="display-img" src="../IMG/MindHub-logo.png" alt="Display Picture">
                 <h4>Hello, <?php echo $_SESSION['user']?></h4>
 
-                <ul>
+                <ul>                   
                     <li>
                         <a href="#">
-                            <i class="fa fa-tachometer" aria-hidden="true"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                            <span>Courses</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                            <span>Department</span>
-                        </a>
-                    </li>
-
-                    
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <i class="fa fa-bullhorn" aria-hidden="true"></i>
                             <span>Announcements</span>
                         </a>
                     </li>
