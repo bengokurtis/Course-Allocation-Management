@@ -73,7 +73,7 @@ include "./main/header.php";
                     <option value="<?php echo $row['id'];?>"><?php echo $row['course_name'];?></option>
                 <?php endwhile?>*/
              </select><br>
-            <button class="btn btn-primary" name='submit' type='submit'>Add Lecturer</button>
+            <button class="btn btn-primary" name='submit' type='submit'>Assign Unit</button>
         </form>
     </div>
 </body>

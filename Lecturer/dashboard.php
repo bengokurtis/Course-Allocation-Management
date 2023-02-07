@@ -30,7 +30,7 @@ include './includes/header.php';
                 <div class="column">
                     <ul>
                         <li style="background: #38AEBF;">
-                            <a href="#">
+                            <a href="allocations.php">
                             <i class="fa fa-book" aria-hidden="true"></i>
                             <span>Allocations</span>
                             </a>

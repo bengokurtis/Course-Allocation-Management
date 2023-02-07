@@ -55,8 +55,9 @@ include "./password-recovery/app_logic.php";
               <button class="btn btn-info btn-lg btn-block" name="submit" type="submit">Login</button>
             </div>
 
-            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="./password-recovery/enter_email.php">Forgot password?</a></p>
+            <p>Staff <a href="Lecturer/index.php" class="link-info">Login</a></p>
             <p>Don't have an account? <a href="register.php" class="link-info">Register here</a></p>
+            
 
           </form>
 
